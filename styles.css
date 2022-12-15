@@ -1,3 +1,13 @@
+:root {
+    --white--color: #ffffff;
+    --navigation--selected--color: #f2f2f2;
+    --videos--background--color: #e4e4e4;
+    --dark--text--color: #0f0f0f;
+    --navigation--icons--color: #030303;
+    --scrollbar--little--dark--color: #606060;
+    --youtube--icon--color: #ff0000;
+}
+
 /*
   1. Use a more-intuitive box-sizing model.
 */
@@ -20,6 +30,7 @@
 html,
 body {
     height: 100%;
+    background-color: var(--white--color);
 }
 
 /*
@@ -73,4 +84,12 @@ h6 {
 #root,
 #__next {
     isolation: isolate;
+}
+
+.header {
+    background-color: var(--white--color);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 112px;
 }
