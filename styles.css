@@ -3,9 +3,13 @@
     --navigation--selected--color: #f2f2f2;
     --videos--background--color: #e4e4e4;
     --dark--text--color: #0f0f0f;
-    --navigation--icons--color: #030303;
+    --navigation--icons--header-buttons--color: #030303;
     --scrollbar--little--dark--color: #606060;
     --youtube--icon--color: #ff0000;
+    --notifications--counter--color: #cc0000;
+    --header--icons--hover--color: #E5E5E5;
+    --header--bottuns--background--color: #f3f3f3;
+    --header--icons--color: #0F0F0F;
 }
 
 /*
@@ -31,6 +35,7 @@ html,
 body {
     height: 100%;
     background-color: var(--white--color);
+    font-family: Roboto, Arial, sans-serif;
 }
 
 /*
@@ -86,10 +91,95 @@ h6 {
     isolation: isolate;
 }
 
+/* hedaer with sixed position at top */
 .header {
     background-color: var(--white--color);
     width: 100%;
     position: fixed;
     top: 0;
     height: 112px;
+}
+
+/* header top icons */
+.header__icons {
+    height: 56px;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__left-icons {
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.header__right-icons {
+    display: flex;
+    margin: 0 30px;
+}
+
+.header__right-icons>.header__icons--size-round {
+    margin-right: 7px;
+}
+
+/* icons for top header */
+.header__icons--size-round {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+/* header icons hover */
+.header__icons--size-round:hover {
+    background-color: var(--header--icons--hover--color);
+}
+
+/* youtube image in header */
+.header__icons--youtube-icon {
+    max-width: 110px;
+    height: auto;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 10px;
+    margin: 0 10px;
+}
+
+/* user image */
+.header__icons--image {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+/* notifications counter */
+.header__icons--notifications {
+    background-color: var(--notifications--counter--color);
+    font-family: Roboto;
+    font-size: 11px;
+    color: var(--white--color);
+    padding: 3px 5px;
+    border-radius: 43%;
+    margin-top: -10px;
+    margin-left: -12px;
+}
+
+
+/* google material symbols setup */
+.material-symbols-rounded {
+    color: var(--header--icons--color);
+    font-size: 27px;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 300,
+        'GRAD' 0,
+        'opsz' 48
 }
