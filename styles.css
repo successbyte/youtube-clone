@@ -245,6 +245,7 @@ h6 {
 }
 
 .button-section__buttons-div--button {
+    font-size: 2rem;
     border: none;
     border-radius: 8px;
     padding: 5px 15px;
@@ -405,4 +406,34 @@ at the right side of search bar */
 
 .header__middle-mic {
     margin-right: auto;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 75px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #cbcfc680;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.navbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.navbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+@media (min-width: 770px) {
+    .second-fixed {
+        left: 75px;
+    }
 }
