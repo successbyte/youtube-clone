@@ -276,6 +276,11 @@ h6 {
     margin-left: 15px;
 }
 
+.button-section__buttons-div--button:last-of-type {
+    margin-right: 100px;
+}
+
+
 .button-section__fade-scroll--icon {
     margin-right: 15px;
 }
