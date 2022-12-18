@@ -37,6 +37,14 @@ body {
     height: 100%;
     background-color: var(--white--color);
     font-family: Roboto, Arial, sans-serif;
+
+    /* text not to be selectable */
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
 }
 
 /*
@@ -435,5 +443,22 @@ at the right side of search bar */
 @media (min-width: 770px) {
     .second-fixed {
         left: 75px;
+    }
+}
+
+/* media for hidding icons for mobile sizes
+    and shows the middle searchbar instead */
+@media (max-width: 500px) {
+
+    .header__icons .header__left-icons .header__icons--size-round,
+    .header__right-icons .header__right-icons--search,
+    .header__right-icons--mic,
+    .header__right-icons--video-call,
+    .header__right-icons--notifications {
+        display: none;
+    }
+
+    .header__midle-icons {
+        display: flex;
     }
 }
