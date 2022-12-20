@@ -444,10 +444,10 @@ at the right side of search bar */
     left: 0;
     width: 75px;
     height: 100%;
-    display: none; 
+    display: none;
     overflow-x: hidden;
     overflow-y: scroll;
-    padding-bottom: 100px;
+    padding-bottom: 70px;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -556,7 +556,9 @@ at the right side of search bar */
     align-items: center;
 }
 
-.navbar .navbar__second-navigation-icons .navbar__video-library,.navbar .navbar__explore .material-symbols-rounded {
+.navbar .navbar__second-navigation-icons .navbar__video-library,
+.navbar .navbar__explore .material-symbols-rounded,
+.navbar .navbar__settings .material-symbols-rounded {
     font-variation-settings:
         'FILL' 0,
         'wght' 300,
@@ -570,7 +572,8 @@ at the right side of search bar */
     align-items: center;
 }
 
-.navbar .navbar__subscriptions .navbar__subscriptions--div {
+.navbar .navbar__subscriptions .navbar__subscriptions--div,
+.navbar .navbar__more-youtube .navbar__more-youtube--div {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -584,7 +587,8 @@ at the right side of search bar */
     padding-right: 10px;
 }
 
-.navbar .navbar__subscriptions .navbar__subscriptions--div:hover {
+.navbar .navbar__subscriptions .navbar__subscriptions--div:hover,
+.navbar .navbar__more-youtube .navbar__more-youtube--div:hover {
     background-color: var(--navigation--selected--color);
 }
 
@@ -594,15 +598,24 @@ at the right side of search bar */
     border-radius: 50%;
 }
 
-.navbar .navbar__subscriptions .navbar__subscriptions--div span {
-    width: 25px;
-    height: 25px;
+.navbar .navbar__subscriptions .navbar__subscriptions--div span,
+.navbar .navbar__more-youtube .navbar__more-youtube--div svg {
+    max-width: 25px;
+    max-height: 25px;
     border-radius: 50%;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+/* .navbar .navbar__more-youtube .navbar__more-youtube--div {
+    background: #606060;
+    width: 90%;
+    display: flex;
+    align-items: center;
+} */
+
 
 /* .navbar:hover::-webkit-scrollbar {
     display: block;
@@ -613,11 +626,44 @@ at the right side of search bar */
 } */
 
 
-.navbar .navbar__explore {
+.navbar .navbar__explore,
+.navbar__more-youtube,
+.navbar__settings,
+.navbar__terms-text {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.navbar .navbar__terms-text P {
+    width: 90%;
+    padding-left: 10px;
+}
+
+.navbar .navbar__terms-text p {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: #4e4d4d;
+    font-weight: 500;
+}
+
+.navbar .navbar__terms-text p:last-of-type {
+    color: #a39f9f;
+    font-weight: normal;
+    cursor: auto;
+}
+
+.navbar .navbar__second-navigation-icons,
+.navbar .navbar__subscriptions,
+.navbar .navbar__explore,
+.navbar .navbar__more-youtube,
+.navbar .navbar__settings,
+.navbar .navbar__terms-text,
+.navbar .navbar__horizintal-line {
+    display: none;
 }
 
 
@@ -634,17 +680,17 @@ at the right side of search bar */
     /* Firefox */
 }
 
-
-
-
-.navbar .navbar__subscriptions .navbar__subscriptions--div p {
+.navbar .navbar__subscriptions .navbar__subscriptions--div p,
+.navbar .navbar__more-youtube .navbar__more-youtube--div code {
     margin-left: 20px;
     font-size: 0.9rem;
     font-weight: normal;
+    font-family: Roboto, Arial, sans-serif;
 }
 
-
-.navbar .navber__subscriptions--h2, .navber__explore--h2 {
+.navbar .navber__subscriptions--h2,
+.navber__explore--h2,
+.navber__more-youtube--h2 {
     font-size: 1rem;
     font-weight: normal;
     margin-left: 20px;
@@ -689,8 +735,14 @@ at the right side of search bar */
         display: none;
     }
 
+    .navbar .navbar__second-navigation-icons,
+    .navbar .navbar__subscriptions,
+    .navbar .navbar__explore,
+    .navbar .navbar__more-youtube,
+    .navbar .navbar__settings,
+    .navbar .navbar__terms-text,
     .navbar .navbar__horizintal-line {
-        display: block;
+        display: flex;
     }
 
 }
