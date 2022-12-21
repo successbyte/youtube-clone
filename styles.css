@@ -445,8 +445,9 @@ at the right side of search bar */
     width: 75px;
     height: 100%;
     display: none;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    overflow: hidden;
+    /* overflow-x: hidden;
+    overflow-y: scroll; */
     padding-bottom: 70px;
 }
 
@@ -698,6 +699,31 @@ at the right side of search bar */
     margin-bottom: 5px;
 }
 
+
+/* navbar setup */
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #929191;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
+} */
+
+
 @media (min-width: 1300px) {
     .navbar {
         width: 240px;
@@ -743,6 +769,10 @@ at the right side of search bar */
     .navbar .navbar__terms-text,
     .navbar .navbar__horizintal-line {
         display: flex;
+    }
+
+    .navbar:hover {
+        overflow-y: scroll;
     }
 
 }
