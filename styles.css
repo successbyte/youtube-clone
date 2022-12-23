@@ -825,14 +825,19 @@ at the right side of search bar */
 
 
 .videos-container__video-container--bottom-div p:first-of-type {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
+
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    /* display: flex;
+    align-items: center; */
+}
+.videos-container__video-container--bottom-div--text-icon {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 }
 
 .videos-container__video-container--bottom-div span {
