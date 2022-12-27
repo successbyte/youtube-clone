@@ -103,7 +103,8 @@ h6 {
     isolation: isolate;
 }
 
-/* hedaer with sixed position at top */
+/* Header Section Strarted */
+/* hedaer with fixed position at top */
 .header {
     background-color: var(--white--color);
     width: 100%;
@@ -115,7 +116,11 @@ h6 {
     z-index: 1;
 }
 
-/* header top icons */
+/* header icons at the top
+and devided in three parts
+-left icons
+-middle icons
+-right icons */
 .header__icons {
     height: 56px;
     overflow: hidden;
@@ -124,15 +129,20 @@ h6 {
     align-items: center;
 }
 
+/* menu icon and youtube logo at the top left of screen */
 .header__left-icons {
-    padding: 0 15px;
+    margin: 0 20px;
     display: flex;
     align-items: center;
     flex-shrink: 0;
 }
 
+/* microphone, search, create video and user logo
+at the top right side of header */
 .header__right-icons {
     display: flex;
+    flex-direction: row;
+    align-items: center;
     margin: 0 30px;
     flex-shrink: 0;
 }
@@ -141,20 +151,29 @@ h6 {
     margin-right: 7px;
 }
 
-/* icons for top header */
-.header__icons--size-round {
-    width: 40px;
-    height: 40px;
+/* header icons parent div setup */
+.header__icons--background {
+    max-width: 40px;
+    min-width: 40px;
+    max-height: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
     flex-shrink: 0;
     cursor: pointer;
 }
 
+/* icons in header setup */
+.header__icons--size-round {
+    max-width: 24px;
+    max-height: 24px;
+}
+
 /* header icons hover */
-.header__icons--size-round:hover {
+.header .header__icons--background:hover {
     background-color: var(--header--icons--hover--color);
 }
 
@@ -176,22 +195,117 @@ h6 {
     border-radius: 50%;
 }
 
+/* Header Section Finished */
 
-/* notifications counter */
+
+/* Header Tooltip Section Strarted */
+
+.tooltip {
+    position: relative;
+}
+
+.tooltiptext {
+    font-family: Roboto, Arial, sans-serif;
+    visibility: hidden;
+    font-size: 12px;
+    width: auto;
+    background: #03030398;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 11px 8px;
+    /* Position the tooltip */
+    position: fixed;
+    top: 65px;
+    z-index: 2;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
 .header__icons--notifications {
     background-color: var(--notifications--counter--color);
     font-family: Roboto, Arial, sans-serif;
-    font-size: 11px;
+    font-size: 12px;
     color: var(--white--color);
-    padding: 3px 5px;
-    border-radius: 43%;
+    padding: 0px 5px;
+    border-radius: 42%;
     margin-top: -10px;
-    margin-left: -12px;
+    margin-left: -10px;
+}
+
+.header__middle-icons {
+    display: none;
+    flex-direction: row;
+    align-items: stretch;
+    border-radius: 20px;
+    border: 1px solid #c4c2c2;
+    overflow: hidden;
+    height: 40px;
+    flex-grow: 1;
+    max-width: 600px;
+    margin-left: 50px;
+    min-width: 110px;
+    margin-left: auto;
+    background-color: var(--header--middle--icons--background--color);
+}
+
+/* header search input */
+.header__middle-icons--input {
+    min-width: 45px;
+    flex-grow: 1;
+    border: none;
+    padding-left: 15px;
+}
+
+/* the vertical line in the 
+middle of search input and search bar */
+.header__middle-icons--vertical-line {
+    min-width: 1px;
+    background-color: #c4c2c2;
+    margin: 0;
+    flex-grow: 0;
+}
+
+/* header middle icons serach icon
+at the right side of search bar */
+.header__middle-icons .header__middle-icons--search {
+    min-width: 70px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border-radius: 0;
 }
 
 
+.header__second-middle-icons--mic-icon {
+    display: none;
+    margin-left: 10px;
+    margin-right: auto;
+    background-color: var(--header--middle--icons--background--color);
+}
+
+.header__space-div {
+    display: none;
+    min-width: 50px;
+}
+
+
+.header__right-icons .header__icons--background {
+    margin-right: 7px;
+}
+
+.test {
+    background-color: #cc0000;
+}
+
+/* Done */
+
+/* notifications counter */
+
+
 /* google material symbols setup */
-.header__right-icons .material-symbols-rounded {
+/* .header__icons--google-setup {
     color: var(--header--icons--color);
     font-size: 27px;
     font-variation-settings:
@@ -199,23 +313,23 @@ h6 {
         'wght' 300,
         'GRAD' 0,
         'opsz' 48
-}
+} */
 
-.header__right-icons .material-symbols-rounded:nth-of-type(2) {
+/* .header__right-icons .material-symbols-rounded:nth-of-type(2) {
     font-variation-settings:
         'FILL' 1,
         'wght' 300,
         'GRAD' 0,
         'opsz' 48
-}
+} */
 
-.header__middle-mic .header__right-icons--mic {
+/* .header__middle-mic .header__right-icons--mic {
     font-variation-settings:
         'FILL' 1,
         'wght' 300,
         'GRAD' 0,
         'opsz' 48
-}
+} */
 
 .second-fixed {
     position: fixed;
@@ -305,46 +419,7 @@ h6 {
 }
 
 
-
-.tooltip {
-    position: relative;
-}
-
-.tooltip .tooltiptext {
-    font-family: Roboto, Arial, sans-serif;
-    visibility: hidden;
-    font-size: 12px;
-    width: auto;
-    background: #03030398;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 11px 8px;
-    /* Position the tooltip */
-    position: fixed;
-    top: 65px;
-    z-index: 2;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
-
-.header__right-icons--search .tooltiptext:after {
-    content: 'Search';
-}
-
-.header__right-icons--mic .tooltiptext:after {
-    content: 'Search with your voice';
-}
-
-.header__right-icons--video-call .tooltiptext:after {
-    content: 'Create';
-}
-
-.header__right-icons--notifications .tooltiptext:after {
-    content: 'Notifications';
-}
+/* Checked */
 
 /* until this line for mobiles and small sizes
     -header
@@ -353,36 +428,17 @@ h6 {
     -header buttons
     -shade for right side of buttons */
 
-.header__midle-icons {
-    display: none;
-    border-radius: 20px;
-    border: 1px solid #c4c2c2;
-    overflow: hidden;
-    height: 40px;
-    flex-grow: 1;
-    max-width: 600px;
-    margin-left: 50px;
-    min-width: 110px;
-    margin-left: auto;
-    background-color: var(--header--middle--icons--background--color);
-}
-
-.header__middle-mic .header__right-icons--mic {
-    display: none;
-    margin-left: 10px;
-    background-color: var(--header--middle--icons--background--color);
-}
-
 @media (min-width: 650px) {
-    .header__midle-icons {
+    .header__middle-icons {
         display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        /* justify-content: space-between; */
     }
 
-    .header__middle-mic .header__right-icons--mic {
+    .header__second-middle-icons--mic-icon {
         display: flex;
+    }
+
+    .header__space-div {
+        display: block;
     }
 
     .header__right-icons .header__right-icons--search {
@@ -394,53 +450,8 @@ h6 {
         background-color: var(--header--middle--icons--background--color);
     }
 
-    .header__right-icons .header__right-icons--mic:hover {
-        margin-right: 80px;
-        background-color: var(--header--icons--hover--color);
-    }
-
 }
 
-.header__middle-mic .header__right-icons--mic:hover {
-    background-color: var(--header--icons--hover--color);
-}
-
-/* header search input */
-.header__middle-icons--input {
-    min-width: 45px;
-    flex-grow: 1;
-    border: none;
-    padding-left: 15px;
-
-}
-
-.header__middle-icons--input:focus {
-    outline: none;
-}
-
-
-
-/* the vertical line in the 
-middle of search input and search bar */
-.header__middle-icons--vertical-line {
-    min-width: 1px;
-    background-color: #c4c2c2;
-    margin: 0;
-    flex-grow: 0;
-}
-
-/* header middle icons serach icon
-at the right side of search bar */
-.header__midle-icons .header__right-icons--search {
-    min-width: 70px;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border-radius: 0;
-}
-
-.header__middle-mic {
-    margin-right: auto;
-}
 
 .navbar {
     position: fixed;
@@ -545,7 +556,7 @@ at the right side of search bar */
         display: none;
     }
 
-    .header__midle-icons {
+    .header__middle-icons {
         display: flex;
     }
 }
@@ -834,6 +845,7 @@ at the right side of search bar */
     /* display: flex;
     align-items: center; */
 }
+
 .videos-container__video-container--bottom-div--text-icon {
     display: flex;
     flex-wrap: nowrap;
