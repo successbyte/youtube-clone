@@ -555,6 +555,9 @@ at the right side of search bar */
     .header__right-icons--notifications {
         display: none;
     }
+    .header__space-div {
+        display: none;
+    }
 
     .header__middle-icons {
         display: flex;
