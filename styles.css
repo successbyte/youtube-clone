@@ -1,17 +1,20 @@
+/* root colors of page */
 :root {
-    --white--color: #ffffff;
-    --navigation--selected--color: #f2f2f2;
-    --videos--background--color: #e4e4e4;
-    --dark--text--color: #0f0f0f;
-    --navigation--icons--header-buttons--color: #030303;
-    --scrollbar--little--dark--color: #606060;
-    --youtube--icon--color: #ff0000;
-    --notifications--counter--color: #cc0000;
-    --header--icons--hover--color: #E5E5E5;
-    --header--bottuns--background--color: #f3f3f3;
-    --header--icons--color: #0F0F0F;
-    --header--middle--icons--background--color: #f9f9f9;
+  --white--color: #ffffff;
+  --navigation--selected--color: #f2f2f2;
+  --videos--background--color: #e4e4e4;
+  --dark--text--color: #0f0f0f;
+  --navigation--icons--header-buttons--color: #030303;
+  --scrollbar--little--dark--color: #606060;
+  --youtube--icon--color: #ff0000;
+  --notifications--counter--color: #cc0000;
+  --header--icons--hover--color: #e5e5e5;
+  --header--bottuns--background--color: #f3f3f3;
+  --header--icons--color: #0f0f0f;
+  --header--middle--icons--background--color: #f9f9f9;
 }
+
+/* CSS Reset Starts */
 
 /*
   1. Use a more-intuitive box-sizing model.
@@ -19,15 +22,15 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    outline: none;
+  box-sizing: border-box;
+  outline: none;
 }
 
 /*
     2. Remove default margin
   */
 * {
-    margin: 0;
+  margin: 0;
 }
 
 /*
@@ -35,18 +38,17 @@
   */
 html,
 body {
-    margin: 3px;
-    height: 100%;
-    background-color: var(--white--color);
-    font-family: Roboto, Arial, sans-serif;
+  height: 100%;
+  background-color: var(--white--color);
+  font-family: Roboto, Arial, sans-serif;
 
-    /* text not to be selectable */
-    -webkit-user-select: none;
-    /* Safari */
-    -ms-user-select: none;
-    /* IE 10 and IE 11 */
-    user-select: none;
-    /* Standard syntax */
+  /* text not to be selectable */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
 }
 
 /*
@@ -55,9 +57,9 @@ body {
     5. Improve text rendering
   */
 body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 /*
@@ -68,8 +70,8 @@ picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 /*
@@ -79,7 +81,7 @@ input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }
 
 /*
@@ -92,7 +94,7 @@ h3,
 h4,
 h5,
 h6 {
-    overflow-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /*
@@ -100,20 +102,22 @@ h6 {
   */
 #root,
 #__next {
-    isolation: isolate;
+  isolation: isolate;
 }
+
+/* CSS Reset Ends */
 
 /* Header Section Strarted */
 /* hedaer with fixed position at top */
 .header {
-    background-color: var(--white--color);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 56px;
-    z-index: 1;
+  background-color: var(--white--color);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 56px;
+  z-index: 1;
 }
 
 /* header icons at the top
@@ -122,304 +126,292 @@ and devided in three parts
 -middle icons
 -right icons */
 .header__icons {
-    height: 56px;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  height: 56px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* menu icon and youtube logo at the top left of screen */
 .header__left-icons {
-    margin: 0 20px;
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
+  margin: 0 17px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
 }
 
 /* microphone, search, create video and user logo
 at the top right side of header */
 .header__right-icons {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 30px;
-    flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 30px;
+  flex-shrink: 0;
 }
 
-.header__right-icons>.header__icons--size-round {
-    margin-right: 7px;
+/* notifications counter */
+.header__icons--notifications {
+  background-color: var(--notifications--counter--color);
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 12px;
+  color: var(--white--color);
+  padding: 0px 5px;
+  border-radius: 42%;
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+/* header right icons a little right margin */
+.header__right-icons .header__icons--background {
+  margin-right: 7px;
 }
 
 /* header icons parent div setup */
 .header__icons--background {
-    max-width: 40px;
-    min-width: 40px;
-    max-height: 40px;
-    min-height: 40px;
-    border-radius: 50%;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    cursor: pointer;
+  max-width: 40px;
+  min-width: 40px;
+  max-height: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 /* icons in header setup */
 .header__icons--size-round {
-    max-width: 24px;
-    max-height: 24px;
+  max-width: 24px;
+  max-height: 24px;
 }
 
 /* header icons hover */
 .header .header__icons--background:hover {
-    background-color: var(--header--icons--hover--color);
+  background-color: var(--header--icons--hover--color);
 }
 
 /* youtube image in header */
 .header__icons--youtube-icon {
-    max-width: 110px;
-    height: auto;
-    cursor: pointer;
-    flex-shrink: 0;
-    padding: 10px;
-    margin: 0 10px;
+  max-width: 110px;
+  height: auto;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 10px;
+  margin: 0 10px;
 }
 
 /* user image */
 .header__icons--image {
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
-/* Header Section Finished */
-
-
-/* Header Tooltip Section Strarted */
-
-.tooltip {
-    position: relative;
-}
-
-.tooltiptext {
-    font-family: Roboto, Arial, sans-serif;
-    visibility: hidden;
-    font-size: 12px;
-    width: auto;
-    background: #03030398;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 11px 8px;
-    /* Position the tooltip */
-    position: fixed;
-    top: 65px;
-    z-index: 2;
-}
-
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
-
-.header__icons--notifications {
-    background-color: var(--notifications--counter--color);
-    font-family: Roboto, Arial, sans-serif;
-    font-size: 12px;
-    color: var(--white--color);
-    padding: 0px 5px;
-    border-radius: 42%;
-    margin-top: -10px;
-    margin-left: -10px;
-}
-
+/* header middle icons for searchbar and search icon */
 .header__middle-icons {
-    display: none;
-    flex-direction: row;
-    align-items: stretch;
-    border-radius: 20px;
-    border: 1px solid #c4c2c2;
-    overflow: hidden;
-    height: 40px;
-    flex-grow: 1;
-    max-width: 600px;
-    margin-left: 50px;
-    min-width: 110px;
-    margin-left: auto;
-    background-color: var(--header--middle--icons--background--color);
+  display: none;
+  flex-direction: row;
+  align-items: stretch;
+  border-radius: 20px;
+  border: 1px solid #c4c2c2;
+  overflow: hidden;
+  height: 40px;
+  flex-grow: 1;
+  max-width: 600px;
+  margin-left: 50px;
+  min-width: 110px;
+  margin-left: auto;
+  background-color: var(--header--middle--icons--background--color);
 }
 
 /* header search input */
 .header__middle-icons--input {
-    min-width: 45px;
-    flex-grow: 1;
-    border: none;
-    padding-left: 15px;
+  min-width: 45px;
+  flex-grow: 1;
+  border: none;
+  padding-left: 15px;
 }
 
 /* the vertical line in the 
 middle of search input and search bar */
 .header__middle-icons--vertical-line {
-    min-width: 1px;
-    background-color: #c4c2c2;
-    margin: 0;
-    flex-grow: 0;
+  min-width: 1px;
+  background-color: #c4c2c2;
+  margin: 0;
+  flex-grow: 0;
 }
 
 /* header middle icons serach icon
 at the right side of search bar */
 .header__middle-icons .header__middle-icons--search {
-    min-width: 70px;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border-radius: 0;
+  min-width: 70px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border-radius: 0;
 }
 
-
+/* header second middle part for mic icon */
 .header__second-middle-icons--mic-icon {
-    display: none;
-    margin-left: 10px;
-    margin-right: auto;
-    background-color: var(--header--middle--icons--background--color);
+  display: none;
+  margin-left: 10px;
+  margin-right: auto;
+  background-color: var(--header--middle--icons--background--color);
 }
 
+/* two divs just to add space in header */
 .header__space-div {
-    display: none;
-    min-width: 50px;
+  display: none;
+  min-width: 50px;
 }
 
+/* Header Section Finished */
+/* ***** */
+/* *** */
 
-.header__right-icons .header__icons--background {
-    margin-right: 7px;
+/* **** */
+/* ****** */
+/* Header Tooltip Section Strarted */
+.tooltip {
+  position: relative;
 }
 
-.test {
-    background-color: #cc0000;
+.tooltiptext {
+  font-family: Roboto, Arial, sans-serif;
+  visibility: hidden;
+  font-size: 12px;
+  width: auto;
+  background: #03030398;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 11px 8px;
+  /* Position the tooltip */
+  position: fixed;
+  top: 65px;
+  z-index: 2;
 }
 
-/* Done */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
 
-/* notifications counter */
+/* Header Tooltip Section Strarted */
+/* ***** */
+/* *** */
 
-
-/* google material symbols setup */
-/* .header__icons--google-setup {
-    color: var(--header--icons--color);
-    font-size: 27px;
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 300,
-        'GRAD' 0,
-        'opsz' 48
-} */
-
-/* .header__right-icons .material-symbols-rounded:nth-of-type(2) {
-    font-variation-settings:
-        'FILL' 1,
-        'wght' 300,
-        'GRAD' 0,
-        'opsz' 48
-} */
-
-/* .header__middle-mic .header__right-icons--mic {
-    font-variation-settings:
-        'FILL' 1,
-        'wght' 300,
-        'GRAD' 0,
-        'opsz' 48
-} */
-
+/* *** */
+/* buttons section started */
+/* Buttons at bottom of Header */
 .second-fixed {
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 56px;
-    overflow: hidden;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 56px;
+  overflow: hidden;
 }
 
 /* header bottom section be relative */
 .button-section {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
-
 
 /* header bottom section buttons */
 .button-section__buttons-div {
-    background-color: var(--white--color);
-    width: 100%;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    overflow-x: scroll;
+  background-color: var(--white--color);
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
 }
 
 /* a little fade at right of header buttons */
 .button-section__fade-scroll {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background: linear-gradient(90deg,
-            #ffffff00,
-            var(--white--color) 30%);
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    width: 100px;
-    height: 56px;
-    text-align: end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: linear-gradient(90deg, #ffffff00, var(--white--color) 30%);
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  width: 100px;
+  height: 56px;
+  text-align: end;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 .button-section__buttons-div::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .button-section__buttons-div {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
+/* buttons at bottom of header */
 .button-section__buttons-div--button {
-    /* font-size: 0.5rem; */
-    border: none;
-    border-radius: 8px;
-    padding: 6px 12px;
-    color: var(--dark--text--color);
-    white-space: nowrap;
-    margin: 0 5px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    cursor: pointer;
-    background-color: var(--navigation--selected--color);
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  color: var(--dark--text--color);
+  white-space: nowrap;
+  margin: 0 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: var(--navigation--selected--color);
 }
 
+/* button hover */
 .button-section__buttons-div--button:hover {
-    background-color: var(--header--icons--hover--color);
+  background-color: var(--header--icons--hover--color);
 }
 
+/* first button */
 .button-section__buttons-div--button:first-of-type {
-    background-color: var(--navigation--icons--header-buttons--color);
-    color: var(--white--color);
-    margin-left: 15px;
+  background-color: var(--navigation--icons--header-buttons--color);
+  color: var(--white--color);
+  margin-left: 15px;
 }
 
+/* lats button */
 .button-section__buttons-div--button:last-of-type {
-    margin-right: 100px;
+  margin-right: 100px;
 }
 
-
-.button-section__fade-scroll--icon {
-    margin-right: 15px;
+/* a arrow right icon at right of buttons */
+.button-section__fade-scroll-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  max-width: 40px;
+  max-height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  margin-right: 15px;
 }
 
-
-/* Checked */
+/* arrow right icon hover */
+.button-section__fade-scroll-icon:hover {
+  background-color: var(--header--icons--hover--color);
+}
+/* arrow right icon */
+.button-section__fade-scroll svg {
+  max-height: 24px;
+  max-width: 24px;
+}
+/* buttons section finished */
 
 /* until this line for mobiles and small sizes
     -header
@@ -428,500 +420,515 @@ at the right side of search bar */
     -header buttons
     -shade for right side of buttons */
 
+/* media for header setup */
 @media (min-width: 650px) {
-    .header__middle-icons {
-        display: flex;
-    }
+  .header__middle-icons {
+    display: flex;
+  }
 
-    .header__second-middle-icons--mic-icon {
-        display: flex;
-    }
+  .header__second-middle-icons--mic-icon {
+    display: flex;
+  }
 
-    .header__space-div {
-        display: block;
-    }
+  .header__space-div {
+    display: block;
+  }
 
-    .header__right-icons .header__right-icons--search {
-        display: none;
-    }
-
-    .header__right-icons .header__right-icons--mic {
-        display: none;
-        background-color: var(--header--middle--icons--background--color);
-    }
-
-}
-
-
-.navbar {
-    position: fixed;
-    top: 56px;
-    left: 0;
-    width: 75px;
-    height: 100%;
+  .header__right-icons .header__right-icons--search {
     display: none;
-    overflow: hidden;
-    /* overflow-x: hidden;
-    overflow-y: scroll; */
-    padding-bottom: 70px;
-}
+  }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-/* .navbar::-webkit-scrollbar {
+  .header__right-icons .header__right-icons--mic {
     display: none;
-} */
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.navbar {
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
+  }
 }
 
+/* Navbar section started */
+/* navbar for medium and tablet sizes
+with four icons */
+.navbar {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 75px;
+  height: 100%;
+  display: none;
+  padding-bottom: 70px;
+}
+
+/* media for medium sizes
+setup navbar and header bottom buttons */
 @media (min-width: 770px) {
-    .second-fixed {
-        left: 75px;
-    }
+  .second-fixed {
+    left: 80px;
+  }
 
-    .navbar {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-    }
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
 
-    .videos-container {
-        margin-left: 75px;
-    }
+  .videos-container {
+    margin-left: 80px;
+  }
 }
 
-.navbar .material-symbols-rounded {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 300,
-        'GRAD' 0,
-        'opsz' 48
-}
-
+/* navbar top first four icons */
 .navbar .navbar__top-icons {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.navbar .material-symbols-rounded {
-    color: black;
+/* general setup for top four nav icons and bottom four nav icons for mobile sizes */
+.navbar .navbar__top-icons .navbar__top-icon,
+.bottom-navbar .navbar__top-icon {
+  cursor: pointer;
+  width: 90%;
+  border-radius: 10px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.navbar .material-symbols-rounded:first-of-type {
-    font-variation-settings:
-        'FILL' 1,
-        'wght' 300,
-        'GRAD' 0,
-        'opsz' 48
+/* nav top icons hover color */
+.navbar .navbar__top-icon:hover,
+.bottom-navbar .navbar__top-icon:hover {
+  background-color: var(--navigation--selected--color);
 }
 
-.navbar .material-symbols-rounded {
-    cursor: pointer;
-    width: 90%;
-    border-radius: 10px;
-    height: 75px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* top navbar and bottom navbar text setup */
+.navbar .navbar__top-icons .navbar__top-icon span,
+.bottom-navbar .navbar__top-icon {
+  font-size: 10px;
+  margin-top: 7px;
+  font-family: Roboto, Arial, sans-serif;
 }
 
-.navbar .material-symbols-rounded:hover {
-    background-color: var(--navigation--selected--color);
+/* navbar svg size */
+.navbar .navbar__top-icon svg,
+.bottom-navbar svg {
+  max-width: 24px;
+  max-height: 24px;
 }
 
-
-.navbar .material-symbols-rounded code {
-    font-size: 10px;
-    margin-top: 7px;
-    font-family: Roboto, Arial, sans-serif;
+/* bottom nav setup for mobile sizes */
+.bottom-navbar {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background-color: var(--white--color);
+  border-top: 1px solid var(--header--icons--hover--color);
+  bottom: 0;
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+  justify-content: space-evenly;
 }
 
-/* media for hidding icons for mobile sizes
-    and shows the middle searchbar instead */
+/* bottom nav icons size */
+.bottom-navbar .navbar__top-icon {
+  width: 20%;
+  height: 90%;
+}
+
+/* media for mobile sizes hide some header icons
+and change the position of navbar icons to bottom */
 @media (max-width: 500px) {
+  .header__icons .header__left-icons {
+    margin: 0;
+  }
 
-    .header__icons .header__left-icons .header__icons--size-round,
-    .header__right-icons .header__right-icons--search,
-    .header__right-icons--mic,
-    .header__right-icons--video-call,
-    .header__right-icons--notifications {
-        display: none;
-    }
-    .header__space-div {
-        display: none;
-    }
-
-    .header__middle-icons {
-        display: flex;
-    }
-}
-
-.navbar .navbar__horizintal-line {
-    min-height: 1px;
-    width: 90%;
-    background-color: #e9dddd;
-    margin: 15px auto;
+  .header__icons .header__left-icons .header__icons--background,
+  .header__right-icons .header__right-icons--search,
+  .header__right-icons--mic,
+  .header__right-icons--video-call,
+  .header__right-icons--notifications {
     display: none;
-}
+  }
 
-.navbar .navbar__second-navigation-icons {
-    width: 100%;
+  .header__space-div {
+    display: none;
+  }
+
+  .header__middle-icons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+  }
 
-.navbar .navbar__second-navigation-icons .navbar__video-library,
-.navbar .navbar__explore .material-symbols-rounded,
-.navbar .navbar__settings .material-symbols-rounded {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 300,
-        'GRAD' 0,
-        'opsz' 48
-}
-
-.navbar .navbar__subscriptions {
+  .bottom-navbar {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+  }
 }
 
+/* horizintal line between navbar sections */
+.navbar .navbar__horizintal-line {
+  min-height: 1px;
+  width: 90%;
+  background-color: #e9dddd;
+  margin: 15px auto;
+  display: none;
+}
+
+/* main setup for navigation parts
+top, second, subscriptions, explore, more and setting */
+.navbar .navbar__second-navigation-icons,
+.navbar .navbar__subscriptions,
+.navbar__explore,
+.navbar__more-youtube,
+.navbar__settings {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* navbar sections headings setup */
+.navber__subscriptions--h2,
+.navber__explore--h2,
+.navber__more-youtube--h2 {
+  font-size: 1rem;
+  font-weight: normal;
+  margin-left: 20px;
+  width: 90%;
+  margin-bottom: 5px;
+}
+
+/* navbar selective divs */
+.navbar .navbar__second-navigation-icons .navbar__top-icon,
 .navbar .navbar__subscriptions .navbar__subscriptions--div,
-.navbar .navbar__more-youtube .navbar__more-youtube--div {
-    display: flex;
+.navbar .navbar__explore .navbar__explore--div,
+.navbar .navbar__more-youtube .navbar__more-youtube--div,
+.navbar .navbar__settings .navbar__settings--div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-height: 40px;
+  overflow: hidden;
+  cursor: pointer;
+  max-width: 90%;
+  width: 90%;
+  height: 40px;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* navbar icons hover background color */
+.navbar .navbar__second-navigation-icons .navbar__top-icon:hover,
+.navbar .navbar__subscriptions .navbar__subscriptions--div:hover,
+.navbar .navbar__explore .navbar__explore--div:hover,
+.navbar .navbar__more-youtube .navbar__more-youtube--div:hover,
+.navbar .navbar__settings .navbar__settings--div:hover {
+  background-color: var(--navigation--selected--color);
+}
+
+/* navbar icons and images size */
+.navbar .navbar__second-navigation-icons .navbar__top-icon svg,
+.navbar .navbar__subscriptions .navbar__subscriptions--div img,
+.navbar .navbar__subscriptions .navbar__subscriptions--div svg,
+.navbar .navbar__explore .navbar__explore--div svg,
+.navbar .navbar__more-youtube .navbar__more-youtube--div svg,
+.navbar .navbar__settings .navbar__settings--div svg {
+  max-width: 25px;
+  max-height: 25px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* navbar items text sizes and setup */
+.navbar__second-navigation-icons span,
+.navbar__subscriptions--div p,
+.navbar__explore .navbar__explore--div p,
+.navbar__more-youtube .navbar__more-youtube--div p,
+.navbar__settings--div p {
+  margin-left: 20px;
+  font-size: 0.9rem;
+  font-weight: normal;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+/* terms and conditions text at
+bottom of navbar */
+.navbar .navbar__terms-text p {
+  width: 90%;
+  padding-left: 10px;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+  color: #4e4d4d;
+  font-weight: 500;
+}
+
+.navbar .navbar__terms-text p:last-of-type {
+  color: #a39f9f;
+  font-weight: normal;
+  cursor: auto;
+}
+
+.navbar__terms-text {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 15px;
+}
+/* navbar finished */
+/* ***** */
+/* *** */
+
+/* scrollbars setup starts */
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-button {
+  height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 0px white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #929191;
+  border-radius: 10px;
+}
+
+/* navbar scroll thumb setup */
+.navbar::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+/* scrollbar finished */
+
+/* Video part starts */
+/* videos container
+all videos are inside this */
+.videos-container {
+  margin-top: 135px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 15px;
+  align-items: center;
+  padding-bottom: 30px;
+  gap: 20px;
+}
+
+/* a container for every video */
+.videos-container__video-container {
+  max-width: 340px;
+  width: 240px;
+  flex-grow: 1;
+  max-height: 280px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  gap: 5px;
+}
+
+/* video iframe from youtube */
+.videos-container__video-container--iframe {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* a div for video name and chanell picture */
+.videos-container__video-container--middle-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* video channel image */
+.videos-container__video-container--middle-div img {
+  border-radius: 50%;
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+}
+
+/* video name */
+.videos-container__video-container--middle-div p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* a more options icon at right bottom of videos */
+.videos-container__video-container--middle-div--icon {
+  min-width: 30px;
+  max-width: 30px;
+  min-height: 30px;
+  max-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+/* hidding the more options icon */
+.videos-container__video-container--middle-div--icon svg {
+  display: none;
+}
+
+/* show more opt icon when hovering video container */
+.videos-container__video-container:hover svg {
+  fill: #585858;
+  display: block;
+}
+
+/* the bottom section of video container
+-channell name
+-views
+-upload time */
+.videos-container__video-container--bottom-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 47px;
+  margin-right: auto;
+  font-size: 13px;
+  color: #4e4d4d;
+}
+
+/* channel name and views and upload time */
+.videos-container__video-container--bottom-div p:first-of-type {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* chanells name and verified icon */
+.videos-container__video-container--bottom-div--text-icon {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+/* the little verified icon */
+.videos-container__video-container--bottom-div svg {
+  fill: #585858;
+  max-width: 14px;
+  max-height: 14px;
+  margin-left: 5px;
+}
+
+/* views and upload time  */
+.videos-container__video-container--bottom-div > p {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* the biggest media
+-showing navbar at larg size 
+-setting up videos sections */
+@media (min-width: 1300px) {
+  /* making navbar larg */
+  .navbar {
+    width: 240px;
+    padding-top: 10px;
+    overflow-y: scroll;
+  }
+
+  /* nav top four icons setup for larg screen sizes */
+  .navbar .navbar__top-icons .navbar__top-icon {
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
     max-height: 40px;
     overflow: hidden;
+    cursor: pointer;
     max-width: 90%;
     width: 90%;
     height: 40px;
     border-radius: 10px;
     padding-left: 10px;
     padding-right: 10px;
-}
+  }
 
-.navbar .navbar__subscriptions .navbar__subscriptions--div:hover,
-.navbar .navbar__more-youtube .navbar__more-youtube--div:hover {
-    background-color: var(--navigation--selected--color);
-}
-
-.navbar .navbar__subscriptions .navbar__subscriptions--div img {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-}
-
-.navbar .navbar__subscriptions .navbar__subscriptions--div span,
-.navbar .navbar__more-youtube .navbar__more-youtube--div svg {
-    max-width: 25px;
-    max-height: 25px;
-    border-radius: 50%;
+  /* navbar items text sizes and setup */
+  .navbar .navbar__top-icons .navbar__top-icon span {
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* .navbar .navbar__more-youtube .navbar__more-youtube--div {
-    background: #606060;
-    width: 90%;
-    display: flex;
-    align-items: center;
-} */
-
-
-/* .navbar:hover::-webkit-scrollbar {
-    display: block;
-} */
-
-/* .navbar {
-    overflow-y: scroll;
-} */
-
-
-.navbar .navbar__explore,
-.navbar__more-youtube,
-.navbar__settings,
-.navbar__terms-text {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.navbar .navbar__terms-text P {
-    width: 90%;
-    padding-left: 10px;
-}
-
-.navbar .navbar__terms-text p {
-    font-family: Roboto, Arial, sans-serif;
-    font-size: 0.8rem;
-    cursor: pointer;
-    margin-bottom: 10px;
-    color: #4e4d4d;
-    font-weight: 500;
-}
-
-.navbar .navbar__terms-text p:last-of-type {
-    color: #a39f9f;
-    font-weight: normal;
-    cursor: auto;
-}
-
-.navbar .navbar__second-navigation-icons,
-.navbar .navbar__subscriptions,
-.navbar .navbar__explore,
-.navbar .navbar__more-youtube,
-.navbar .navbar__settings,
-.navbar .navbar__terms-text,
-.navbar .navbar__horizintal-line {
-    display: none;
-}
-
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-/* .navbar::-webkit-scrollbar {
-    display: none;
-} */
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.navbar {
-    /* -ms-overflow-style: none; */
-    /* IE and Edge */
-    /* scrollbar-width: none; */
-    /* Firefox */
-}
-
-.navbar .navbar__subscriptions .navbar__subscriptions--div p,
-.navbar .navbar__more-youtube .navbar__more-youtube--div code {
+    margin-top: 0;
     margin-left: 20px;
     font-size: 0.9rem;
     font-weight: normal;
     font-family: Roboto, Arial, sans-serif;
-}
+  }
 
-.navbar .navber__subscriptions--h2,
-.navber__explore--h2,
-.navber__more-youtube--h2 {
-    font-size: 1rem;
-    font-weight: normal;
-    margin-left: 20px;
-    width: 90%;
-    margin-bottom: 5px;
-}
+  .videos-container {
+    margin-left: 250px;
+  }
 
+  .second-fixed {
+    left: 250px;
+  }
 
-/* navbar setup */
+  /* navbar home icon background */
+  .navbar .navbar__top-icons .navbar__top-icon:first-of-type {
+    background-color: var(--navigation--selected--color);
+  }
 
-/* width */
-::-webkit-scrollbar {
-    width: 8px;
-}
+  /* navbar home icon background changes on hover */
+  .navbar .navbar__top-icons .navbar__top-icon:first-of-type:hover {
+    background-color: var(--header--icons--hover--color);
+  }
 
-::-webkit-scrollbar-button {
-    height: 3px;
-}
+  /* hide navbar top section library icon */
+  .navbar .navbar__top-icons .navbar__top-icon:last-of-type {
+    display: none;
+  }
 
+  /* main setup for navigation parts
+top, second, subscriptions, explore, more and setting */
+  .navbar .navbar__second-navigation-icons,
+  .navbar .navbar__subscriptions,
+  .navbar__explore,
+  .navbar__more-youtube,
+  .navbar__settings {
+    display: flex;
+  }
 
-/* Track */
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 0px white;
-}
+  .navbar__terms-text {
+    display: flex;
+  }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
+  /* horizintal line between navbar sections */
+  .navbar .navbar__horizintal-line {
+    display: block;
+  }
+
+  /* change scrollbar thumb color when hover navbar */
+  .navbar:hover::-webkit-scrollbar-thumb {
     background: #929191;
     border-radius: 10px;
-
-}
-
-/* Handle on hover */
-/* ::-webkit-scrollbar-thumb:hover {
-    background: #b30000;
-} */
-
-.videos-container {
-    margin-top: 135px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-bottom: 30px;
-    gap: 20px;
-}
-
-.videos-container__video-container {
-    max-width: 340px;
-    width: 240px;
-    flex-grow: 1;
-    max-height: 280px;
-    overflow: hidden;
-    /* padding: 5px; */
-    cursor: pointer;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    gap: 5px;
-}
-
-.videos-container__video-container--iframe {
-    width: 100%;
-    border-radius: 15px;
-}
-
-.videos-container__video-container--middle-div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.videos-container__video-container--middle-div img {
-    border-radius: 50%;
-    width: 37px;
-    height: 37px;
-    flex-shrink: 0;
-}
-
-.videos-container__video-container--middle-div p {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.videos-container__video-container--middle-div--icon {
-    min-width: 30px;
-    min-height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-
-.videos-container__video-container--middle-div--icon span {
-    display: none;
-}
-
-.videos-container__video-container:hover span {
-    display: block;
-}
-
-.videos-container__video-container--bottom-div {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 47px;
-    margin-right: auto;
-    font-size: 13px;
-    color: #4e4d4d;
-    /* margin-top: -5px; */
-}
-
-
-.videos-container__video-container--bottom-div p:first-of-type {
-
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* display: flex;
-    align-items: center; */
-}
-
-.videos-container__video-container--bottom-div--text-icon {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-}
-
-.videos-container__video-container--bottom-div span {
-    font-size: 16px;
-    margin-left: 5px;
-}
-
-.videos-container__video-container--bottom-div>p {
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-
-@media (min-width: 1300px) {
-    .navbar {
-        width: 240px;
-        padding-top: 10px;
-    }
-
-    .videos-container {
-        margin-left: 250px;
-    }
-
-    .second-fixed {
-        left: 250px;
-    }
-
-    .navbar .material-symbols-rounded {
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        padding-left: 10px;
-        height: 40px;
-    }
-
-    .navbar .navbar__top-icons .material-symbols-rounded:first-of-type {
-        font-weight: bold;
-        background-color: var(--navigation--selected--color);
-    }
-
-    .navbar .navbar__top-icons .material-symbols-rounded:first-of-type:hover {
-        background-color: var(--header--icons--hover--color);
-    }
-
-    .navbar .material-symbols-rounded code {
-        font-size: 0.9rem;
-        padding-left: 20px;
-        margin: auto 0;
-    }
-
-    .navbar .navbar__top-icons .navbar__video-library {
-        display: none;
-    }
-
-    .navbar .navbar__second-navigation-icons,
-    .navbar .navbar__subscriptions,
-    .navbar .navbar__explore,
-    .navbar .navbar__more-youtube,
-    .navbar .navbar__settings,
-    .navbar .navbar__terms-text,
-    .navbar .navbar__horizintal-line {
-        display: flex;
-    }
-
-    .navbar:hover {
-        overflow-y: scroll;
-    }
-
+  }
 }
